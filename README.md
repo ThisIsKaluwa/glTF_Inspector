@@ -35,7 +35,7 @@ The supported systems are:
 
 You might need to mark the glTF Inspector as an executable on macOS using this command:
 
-`chmod u+x gltf_inspector`
+`chmod u+x gltf_inspector` followed by `./gltf_inspector` 
 
 after you have unpacked the archive and opened the shell in the target directory. 
 
