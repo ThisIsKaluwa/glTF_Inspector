@@ -1,0 +1,56 @@
+# Taken from https://github.com/bevyengine/bevy/blob/main/.github/workflows/ci.yml
+name: CI
+
+on:
+  pull_request:
+  push:
+
+env:
+  CARGO_TERM_COLOR: always
+
+jobs:
+  build:
+    strategy:
+      matrix:
+        os: [windows-latest, ubuntu-latest, macos-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/cache@v2
+        with:
+          path: |
+            ~/.cargo/bin/
+            ~/.cargo/registry/index/
+            ~/.cargo/registry/cache/
+            ~/.cargo/git/db/
+            target/
+          key: ${{ runner.os }}-cargo-build-${{ hashFiles('**/Cargo.toml') }}
+      - uses: actions-rs/toolchain@v1
+        with:
+          toolchain: stable
+          override: true
+      - name: Install alsa and udev
+        run: sudo apt-get update; sudo apt-get install --no-install-recommends libasound2-dev libudev-dev
+        if: runner.os == 'linux'
+      - name: Build release versions
+        run: cargo build --release
+        env:
+          CARGO_INCREMENTAL: 0
+          RUSTFLAGS: "-C debuginfo=0 -D warnings"
+      - name: Debugging
+        run: |
+          ls target/release
+      - name: Setting filename (not-windows)
+        run: echo "FINAL_FILENAME=gltf_inspector" >> $GITHUB_ENV; mv target/release/gltf_inspector gltf_inspector
+        if: runner.os != 'windows'
+      - name: Setting filename (windows)
+        run: |
+          echo "FINAL_FILENAME=gltf_inspector.exe" | Out-File -FilePath $env:GITHUB_ENV -Encoding utf8 -Append; mv target/release/gltf_inspector.exe gltf_inspector.exe
+        if: runner.os == 'windows'
+
+      - uses: actions/upload-artifact@v2
+        with:
+          name: ${{ matrix.os }}
+          path: |
+            assets/
+            ${{env.FINAL_FILENAME}}

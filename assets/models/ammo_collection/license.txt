@@ -1,0 +1,11 @@
+Model Information:
+* title:	Ammo collection
+* source:	https://sketchfab.com/3d-models/ammo-collection-31b78afb6f544b0386d02be2d7aad5d8
+* author:	Blarb (https://sketchfab.com/Blarb)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Ammo collection" (https://sketchfab.com/3d-models/ammo-collection-31b78afb6f544b0386d02be2d7aad5d8) by Blarb (https://sketchfab.com/Blarb) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

@@ -1,0 +1,12 @@
+[package]
+name = "gltf_inspector"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+bevy = "0.6"
+gltf = "1.0.0"
+lazy_static = "1.4"
+bevy_mod_picking = "0.5.4"
