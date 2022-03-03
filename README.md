@@ -33,11 +33,10 @@ The supported systems are:
 - Linux
 - macOS
 
-You might need to mark the glTF Inspector as an executable on macOS using `chmod u+x gltf_inspector` 
-followed by `./gltf_inspector` to open the program. 
-Please note if you open the program any other way the program might display an empty scene. 
+You might need to mark the glTF Inspector as an executable on macOS using `chmod u+x gltf_inspector` followed by `./gltf_inspector` 
+to open the program after you have unpacked the archive and opened the shell in the target directory. 
+Please note if you open the program any other way the program might display an empty scene.
 
-after you have unpacked the archive and opened the shell in the target directory. 
 
 
 
