@@ -1,7 +1,7 @@
 # glTF Inspector
 ## _Visualizer-Tool for glTF 3D models_
 
-![Displayed glTF model](./images/1.png)
+![Displayed glTF model](./images/1.PNG)
 #
 ## Features
 ### Display and inspect glTF models 
